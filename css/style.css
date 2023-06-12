@@ -1,0 +1,90 @@
+.apple::after{
+content: "곰";
+color: red;
+}
+/*color는 기본컬러*/
+/*after&brfore는 검색엔진할때 검색이안됨/가상으로 만들어진 텍스트
+자바스크립트에서는 컨트롤할수없다.*/
+.apple::before{
+  content: "ㅋㅋㅋㅋㅋ";
+ background-color: blue;
+ width: 100px;
+ height: 30px;
+ display: block;
+}
+#billy{
+  border: 2px solid #000;
+  border-collapse: collapse;
+}
+#billy td,th{
+  border: 0.5px solid #000;
+  padding: 0.3em 1em;
+}
+/*em:본문사이즈의 폰트보다 좀 크게 하는 단위 EX)font-size:2em/font-size:0.5em은
+크게/작게하면 됨
+대제목은 본문의 2.5의크기이다.*/
+#billy th{
+  background-color: #858585;
+}
+/*id가 billy인경우 자손중에서 각각 둘째인 부분들의 뒷부분이다.*/
+#billy td:nth-of-type(2)::after{
+content: "원";
+margin-left: 0.3em;
+font-size:0.8em;
+/*color: darkblue;*/
+}
+/*중간번째는 nth-of-type()씀*/
+#moda1{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index:9999;
+
+}
+#moda1lwin{
+  background-color: #fff;
+  width: calc(100% - 20px);
+ max-width: 450px;
+ position: absolute;
+ left: 15%;
+ top:50%;
+ /*transform: translate(-50% ,-50%);*/
+border-radius: 4px;
+box-shadow: 3px 8px 12px rgb(124, 123, 124);
+
+}
+/*블록옮길때:포지션:absolute*/
+#moda1clbtn{
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+#moda1clbtn::before,
+#moda1clbtn::after
+{
+  display: block;
+  width: 40px;
+  height: 4px;
+  background-color: crimson;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  
+}
+/*after/before는 content태그를 꼭 써야지 모습을 보인다.*/
+#moda1clbtn::before{
+  transform: translate(-50%, -50%) rotate(45deg);
+
+}
+#moda1clbtn::after{
+  transform: translate(-50%, -50%) rotate(-45deg);
+
+}
